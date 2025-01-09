@@ -2,6 +2,7 @@
 
 set -e
 
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/../custom_components"
 
-pre-commit run --all-files
+ruff format .
+ruff check . --fix
